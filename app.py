@@ -6,9 +6,9 @@ from flask_admin.contrib.sqla import ModelView
 # import views.admin_overwrite as admin_overwrite
 
 app = Flask(__name__)
+app.config.from_object(Settings)
 admin = Admin(app, name='Database')
 db.init_app(app)
-app.config.from_object(Settings)
 admin._menu = admin._menu[1:]
 
 admin.add_view(ModelView(User, db.session))
