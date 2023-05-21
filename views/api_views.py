@@ -1,5 +1,5 @@
 from app import *
-from flask import jsonify
+from flask import jsonify, request
 from utils.qr_tools import generate_qr_code
 from utils.hashing import generate_random_sha256, generate_sha256
 from utils.token_security import *
@@ -135,10 +135,11 @@ def mark_safe(token, hash_str):
     else:
         return jsonify({'detail': 'permission denied'})
 
-@app.route('/data/<hash_str>/<int:bmp>/<int:temp>/<int:res>/<int:oxy>/<int:battery>/<int:alarm>')
-def update_data(hash_str, bmp, temp, res, oxy, battery, alarm):
+@app.route('/data/<hash_str>/<int:bmp>/<int:mmhg>/<int:temp>/<int:res>/<int:oxy>/<int:battery>/<int:alarm>')
+def update_data(hash_str, bmp, mmhg, temp, res, oxy, battery, alarm):
     chair = Chair.query.filter_by(qr_code=hash_str)[0]
     chair.bmp = bmp
+    chair.mmhg = mmhg
     chair.temp = temp
     chair.battery = battery
     chair.alarm_state = alarm

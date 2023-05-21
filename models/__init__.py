@@ -26,6 +26,7 @@ class Chair(db.Model):
     lat = db.Column(db.Integer, nullable=True)
     lng = db.Column(db.Integer, nullable=True)
     bmp = db.Column(db.Integer, nullable=True)
+    mmhg = db.Column(db.Integer, nullable=True)
     temp = db.Column(db.Integer, nullable=True)
     oxygen = db.Column(db.Integer, nullable=True)
     respiratory_rate = db.Column(db.Integer, nullable=True)
