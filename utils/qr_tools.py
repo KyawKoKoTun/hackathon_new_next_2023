@@ -15,4 +15,4 @@ def generate_qr_code(data, file_name):
 
 
 if __name__ == '__main__':
-    generate_qr_code('chair_22716fd7bbb6ab5efb883a9fe8444a0a3ae384a84b29310512cfd7d8db431b7b', '22716fd7bbb6ab5efb883a9fe8444a0a3ae384a84b29310512cfd7d8db431b7b.png')
+    generate_qr_code('chair_93404727c8e3f212a9837338b2d355f3c7fbe54e187486725eaf1170bd4f5bc2', '93404727c8e3f212a9837338b2d355f3c7fbe54e187486725eaf1170bd4f5bc2.png')
